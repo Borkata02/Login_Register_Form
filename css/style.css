@@ -1,0 +1,122 @@
+/* Imports */
+@import url('reset.css');
+
+/* Fonts */
+
+/* Main */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(30,1,251);
+background: linear-gradient(312deg, rgba(30,1,251,1) 10%, rgba(20,88,242,1) 20%, rgba(9,162,247,1) 30%, rgba(7,225,246,1) 40%, rgba(14,249,227,1) 50%, rgba(7,225,246,1) 60%, rgba(9,162,247,1) 70%, rgba(12,121,250,1) 80%, rgba(20,88,242,1) 90%, rgba(30,1,251,1) 100%);
+}
+
+.form {
+    height: 600px;
+    width: 500px;
+    background-color: white;
+    box-shadow: 8px 8px 20px rgb(128, 128, 128);
+    position: relative;
+    overflow: hidden;
+}
+
+.btns{
+    height: 60px;
+    width: 300px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 10px 10px 30px rgb(90, 186, 238);
+    border-radius: 50px;
+}
+
+.login,
+.register {
+    font-size: 22px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.slider {
+    height: 60px;
+    width: 150px;
+    border-radius: 50px 0% 0% 50px;
+    background-image: linear-gradient(to right,
+            rgb(90, 234, 253),
+            rgb(31, 246, 171));
+    position: absolute;
+    top: 20px;
+    left:100px;
+    transition: all 0.5s ease-in-out;
+}
+.slider-right{
+    border-radius: 0% 50px 50px 0%;
+    background-image: linear-gradient(to left,
+    rgb(90, 234, 253),
+    rgb(31, 246, 171));
+}
+
+.moveslider {
+    left: 250px;
+}
+.form-section{
+    height: 500px;
+    width: 1000px;
+    padding: 20px 0;
+    display: flex;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    left: 0px;
+}
+
+.form-section-move {
+    left: -500px;
+}
+
+.login-form,
+.register-form {
+    height: 100%;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 150px;
+}
+.login-form{
+    gap: 50px;
+}
+.register-form{
+    gap: 30px;
+}
+
+.ele {
+    height: 60px;
+    width: 400px;
+    outline: none;
+    border: none;
+    color: rgb(77, 77, 77);
+    background-color: rgb(240, 240, 240);
+    border-radius: 50px;
+    padding-left: 30px;
+    font-size: 18px;
+}
+
+.clkbtn {
+    height: 60px;
+    width: 150px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right,
+    rgb(90, 234, 253),
+    rgb(31, 246, 171));
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+}
