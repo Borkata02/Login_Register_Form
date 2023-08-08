@@ -10,6 +10,8 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="background">
+    </div>
     <div class="form">
         <div class="container">
             <div class="row">
@@ -17,19 +19,37 @@
                     <div class="slider"></div>
                     <div class="btns">
                         <button class="login">Login</button>
-                        <button class="register">Register</button>
+                        <button class="register">Sign Up</button>
                     </div>
                     <div class="form-section">
                         <div class="login-form">
-                            <input type="email" class=" email ele" placeholder="youremail@email.com">
-                            <input type="password" class="pass ele" placeholder="password">
-                            <button class="clkbtn">Login</button>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                              </div>
+                              <div class="form-floating">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                              </div>
+                            <button class="clkbtn" >Login</button>
                         </div>
                         <div class="register-form">
-                            <input type="text" class="name ele" placeholder="Enter your name">
-                            <input type="email" class=" email ele" placeholder="youremail@email.com">
-                            <input type="password" class="pass ele"placeholder="Password">
-                            <input type="password" class="conf_pass ele" placeholder="Confirm Password">
+                            <div class="form-floating">
+                                <input type="text" class="form-control"  id="floatingName" placeholder="Enter your name">
+                                <label for="floatingName">Name</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingEmail" placeholder="youremail@email.com">
+                                <label for="floatingEmail">Email</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control"id="floatingPass" placeholder="Password">
+                                <label for="floatingPass">Password</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="floatingConf" placeholder="Confirm Password">
+                                <label for="floatingConf">Confirm Password</label>
+                            </div>
                             <button class="clkbtn"> Sign Up</button>
                         </div>
                     </div>
@@ -45,20 +65,49 @@ let login = document.querySelector(".login");
 let slider = document.querySelector(".slider");
 let formSection = document.querySelector(".form-section");
 let form = document.querySelector(".form")
+let img = document.querySelector(".background")
  
 signup.addEventListener("click", () => {
     slider.classList.add("moveslider");
     formSection.classList.add("form-section-move");
     formSection.classList.remove("form-section-login");
-    slider.classList.add("slider-right");
+    img.classList.add("img-left");
 });
  
 login.addEventListener("click", () => {
     slider.classList.remove("moveslider");
     formSection.classList.remove("form-section-move");
     formSection.classList.add("form-section-login");
-    slider.classList.remove("slider-right");
+    img.classList.remove("img-left");
 });
+
+
+function createRipple(event) {
+  const button = event.currentTarget;
+
+  const circle = document.createElement("span");
+  const diameter = Math.max(button.clientWidth, button.clientHeight);
+  const radius = diameter / 2;
+
+  circle.style.width = circle.style.height = `${diameter}px`;
+  circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+  circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+  circle.classList.add("ripple");
+
+  const ripple = button.getElementsByClassName("ripple")[0];
+
+  if (ripple) {
+    ripple.remove();
+  }
+
+  button.appendChild(circle);
+}
+
+const buttons = document.getElementsByClassName("clkbtn");
+for (const button of buttons) {
+  button.addEventListener("click", createRipple);
+}
+
     </script>
 </body>
 </html>
