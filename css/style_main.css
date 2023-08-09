@@ -1,0 +1,102 @@
+@import url('reset.css');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    background: linear-gradient(#1DA1F2, #E1306C);
+}
+
+.wrapper .button{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin: 0 5px;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    
+}
+.wrapper .button:hover{
+    width: 200px;
+}
+
+.wrapper .button .icon{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1):hover .icon{
+    background-color: #4267B2;
+}
+.wrapper .button:nth-child(2):hover .icon{
+    background-color: #1DA1F2;
+}
+.wrapper .button:nth-child(3):hover .icon{
+    background-color: #E1306C;
+}
+.wrapper .button:nth-child(4):hover .icon{
+    background-color: #ff0000;
+}
+.wrapper .button .icon i{
+    font-size: 25px;
+    line-height: 60px;
+}
+.wrapper .button:hover .icon i{
+    color: #fff;
+}
+.wrapper .button span{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+}
+.wrapper .button:nth-child(1) span{
+    color: #4267B2;
+}
+.wrapper .button:nth-child(2) span{
+    color: #1DA1F2;
+}
+.wrapper .button:nth-child(3) span{
+    color: #E1306C;
+}
+.wrapper .button:nth-child(4) span{
+    color: #ff0000;
+}
+a{
+    color: #000 !important;
+    text-decoration: none !important;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+}
+a::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0px;
+    height: 40px;
+    background-color: #fff;
+    transition: 0.3s;
+    z-index: -1;
+    border-radius: 20px;
+}
+a:hover::before{
+    width: 100%;
+}
+p{
+    color: red;
+}
